@@ -4,9 +4,70 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
   form {
-    background-color: aqua;
-    border: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: 3px solid var(--alt-main-color);
+    border-radius: 12px;
     padding: 20px;
+    -webkit-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
+    @include phones {
+      width: 100%;
+    }
+    input {
+      padding: 8px 12px;
+      color: var(--alt-main-color) !important;
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      &:focus + label::before {
+        width: 97.5%;
+        @include phones {
+          width: 96%;
+        }
+      }
+    }
+    label {
+      font-size: 18px;
+      margin-bottom: 3px;
+      font-weight: bold;
+      position: relative;
+      &:not(:first-of-type)::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 4px;
+        top: -14px;
+        left: 5px;
+        background-color: var(--alt-main-color);
+        border-radius: 0 0 12px 12px;
+        transition: 0.3s;
+      }
+    }
+    button {
+      color: var(--alt-main-color);
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 20px;
+      width: fit-content;
+      margin: 5px auto 0;
+      background-color: #fff;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: var(--main-color);
+        color: #fff;
+      }
+    }
   }
 }

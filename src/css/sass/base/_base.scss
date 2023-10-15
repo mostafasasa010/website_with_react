@@ -8,7 +8,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--main-font);
 }
 ul {
   list-style: none;
@@ -17,11 +17,16 @@ a {
   text-decoration: none;
 }
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--main-font);
   border: none;
 }
 input,
 textarea {
   border: none;
   outline: none;
+  font-family: var(--main-font);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--palceholde-color);
 }
