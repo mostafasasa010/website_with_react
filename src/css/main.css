@@ -292,12 +292,13 @@ nav.nav .container > div .right i.bx-x {
   position: fixed;
   left: 0;
   top: 100px;
-  width: 25%;
+  width: 20%;
   padding: 20px;
   height: calc(100vh - 100px);
   background-color: var(--main-color);
   border-right: 4px solid var(--second-color);
   transition: 0.3s;
+  z-index: 10000;
 }
 @media (max-width: 480px) {
   .dash-side {
@@ -319,7 +320,7 @@ nav.nav .container > div .right i.bx-x {
   background-color: var(--main-color);
   position: absolute;
   right: -39px;
-  top: 50px;
+  top: 0;
   cursor: pointer;
 }
 @media (max-width: 480px) {
@@ -353,12 +354,37 @@ nav.nav .container > div .right i.bx-x {
 
 .dashboard {
   margin-top: 100px;
-  margin-left: 25%;
+  margin-left: 20%;
 }
 @media (max-width: 480px) {
   .dashboard {
     margin-left: 0;
   }
+}
+
+.users {
+  padding: 20px;
+}
+.users table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+.users table tr {
+  background-color: #f1f7f8;
+}
+.users table th,
+.users table td {
+  border: 1px solid var(--main-color);
+  padding: 12px;
+  text-align: center;
+}
+.users table th {
+  background-color: var(--alt-main-color);
+  color: #fff;
+}
+.users table td {
+  overflow: scroll;
 }
 
 /*# sourceMappingURL=main.css.map */

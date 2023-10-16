@@ -1,0 +1,24 @@
+.users {
+  padding: 20px;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    tr {
+      background-color: #f1f7f8;
+    }
+    th,
+    td {
+      border: 1px solid var(--main-color);
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: var(--alt-main-color);
+      color: #fff;
+    }
+    td {
+      overflow: scroll;
+    }
+  }
+}

@@ -1,6 +1,6 @@
+import { Outlet } from "react-router-dom";
 import DashHeader from "../components/DashHeader";
 import DashSide from "../components/DashSide";
-import Users from "./Users";
 
 function Dashboard() {
   return (
@@ -9,7 +9,7 @@ function Dashboard() {
       <div className="dashboard">
         <DashSide />
         <main className="main">
-          <Users />
+          <Outlet />
         </main>
       </div>
     </>

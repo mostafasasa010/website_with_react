@@ -42,7 +42,7 @@ function Header() {
                   </Link>
                 )}
               </div>
-              <i class="bx bx-menu menu" onClick={handelClick}></i>
+              <i className="bx bx-menu menu" onClick={handelClick}></i>
             </div>
           </div>
         </div>
