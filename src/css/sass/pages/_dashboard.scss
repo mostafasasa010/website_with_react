@@ -1,0 +1,7 @@
+.dashboard {
+  margin-top: 100px;
+  margin-left: 25%;
+  @include phones {
+    margin-left: 0;
+  }
+}

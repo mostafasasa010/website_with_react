@@ -1,0 +1,11 @@
+.menu {
+  display: none;
+  background-color: #fff;
+  font-size: 38px;
+  margin-left: 10px;
+  border-radius: 6px;
+  color: var(--alt-main-color);
+  @include phones {
+    display: block;
+  }
+}

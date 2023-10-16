@@ -1,0 +1,14 @@
+.nav-dash {
+  .right {
+    ul {
+      @include phones {
+        display: none;
+      }
+      li {
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

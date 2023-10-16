@@ -59,6 +59,57 @@ textarea::placeholder {
   }
 }
 
+.menu {
+  display: none;
+  background-color: #fff;
+  font-size: 38px;
+  margin-left: 10px;
+  border-radius: 6px;
+  color: var(--alt-main-color);
+}
+@media (max-width: 480px) {
+  .menu {
+    display: block;
+  }
+}
+
+.ul-i {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--alt-main-color);
+  position: fixed;
+  top: -200px;
+  z-index: 100;
+  width: 100%;
+  padding: 20px;
+  transition: 0.3s;
+}
+@media (max-width: 480px) {
+  .ul-i {
+    display: flex;
+  }
+}
+.ul-i.active {
+  top: 100px;
+}
+.ul-i li {
+  width: 100%;
+}
+.ul-i li a {
+  display: block;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--main-color);
+  border-radius: 15px;
+}
+.ul-i li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
 .btn {
   width: fit-content;
   padding: 8px 20px;
@@ -88,6 +139,7 @@ nav.nav {
   background-color: var(--alt-main-color);
   height: 100px;
   border-bottom: 4px solid var(--second-color);
+  z-index: 1000;
 }
 nav.nav .container > div {
   display: flex;
@@ -104,22 +156,30 @@ nav.nav .container > div > a img {
 }
 nav.nav .container > div .right {
   display: flex;
+  align-items: center;
 }
-nav.nav .container > div .right ul {
+nav.nav .container > div .right ul.ul {
   display: flex;
 }
 @media (max-width: 480px) {
-  nav.nav .container > div .right ul {
+  nav.nav .container > div .right ul.ul {
     display: none;
   }
 }
-nav.nav .container > div .right ul li a {
+nav.nav .container > div .right ul.ul li a {
   color: #fff;
   padding: 10px 12px;
   background-color: var(--main-color);
 }
 nav.nav .container > div .right .btns {
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  nav.nav .container > div .right .btns {
+    margin-left: 10px;
+  }
 }
 nav.nav .container > div .right .btns a {
   padding: 6px 12px;
@@ -127,6 +187,7 @@ nav.nav .container > div .right .btns a {
 @media (max-width: 480px) {
   nav.nav .container > div .right .btns a {
     font-size: 15px;
+    padding: 4px 6px;
   }
 }
 nav.nav .container > div .right .btns a:not(:last-of-type) {
@@ -134,6 +195,22 @@ nav.nav .container > div .right .btns a:not(:last-of-type) {
 }
 nav.nav .container > div .right .btns a:hover {
   background-color: var(--alt-main-color);
+}
+nav.nav .container > div .right i {
+  display: none;
+  background-color: #fff;
+  font-size: 38px;
+  margin-left: 10px;
+  border-radius: 6px;
+  color: var(--alt-main-color);
+}
+@media (max-width: 480px) {
+  nav.nav .container > div .right i {
+    display: block;
+  }
+}
+nav.nav .container > div .right i.bx-x {
+  color: var(--error-color);
 }
 
 .sign-up {
@@ -211,11 +288,77 @@ nav.nav .container > div .right .btns a:hover {
   border-color: transparent transparent var(--error-color) transparent;
 }
 
+.dash-side {
+  position: fixed;
+  left: 0;
+  top: 100px;
+  width: 25%;
+  padding: 20px;
+  height: calc(100vh - 100px);
+  background-color: var(--main-color);
+  border-right: 4px solid var(--second-color);
+  transition: 0.3s;
+}
+@media (max-width: 480px) {
+  .dash-side {
+    transform: translateX(-150px);
+    width: 150px;
+  }
+}
+.dash-side ul li a {
+  width: 100%;
+  display: block;
+  color: #fff;
+}
+.dash-side > div {
+  width: 35px;
+  height: 35px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  position: absolute;
+  right: -39px;
+  top: 50px;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .dash-side > div {
+    display: flex;
+  }
+}
+.dash-side > div i {
+  font-size: 20px;
+  color: #fff;
+}
+.dash-side.active {
+  transform: translateX(0);
+}
+
+@media (max-width: 480px) {
+  .nav-dash .right ul {
+    display: none;
+  }
+}
+.nav-dash .right ul li a {
+  color: #fff;
+}
+
 .home {
   margin-top: 100px;
 }
 .home .container > div h1 {
   color: var(--main-color);
+}
+
+.dashboard {
+  margin-top: 100px;
+  margin-left: 25%;
+}
+@media (max-width: 480px) {
+  .dashboard {
+    margin-left: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

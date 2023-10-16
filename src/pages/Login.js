@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 
 function Login() {
   const [email, setEmail] = useState("");
