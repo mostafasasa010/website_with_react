@@ -1,37 +1,37 @@
 .dash-side {
   position: fixed;
-  left: 0;
   top: 100px;
+  left: 0;
   width: 20%;
-  padding: 20px;
   height: calc(100vh - 100px);
-  background-color: var(--main-color);
+  padding: 20px;
   border-right: 4px solid var(--second-color);
+  background-color: var(--main-color);
   transition: 0.3s;
   z-index: 10000;
   @include phones {
-    transform: translateX(-150px);
     width: 150px;
+    transform: translateX(-150px);
   }
   ul {
     li {
       a {
-        width: 100%;
         display: block;
+        width: 100%;
         color: #fff;
       }
     }
   }
   > div {
+    position: absolute;
+    top: 0;
+    right: -39px;
+    display: none;
     width: 35px;
     height: 35px;
-    display: none;
     align-items: center;
     justify-content: center;
     background-color: var(--main-color);
-    position: absolute;
-    right: -39px;
-    top: 0;
     cursor: pointer;
     @include phones {
       display: flex;

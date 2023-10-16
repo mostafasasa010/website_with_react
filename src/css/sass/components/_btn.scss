@@ -2,12 +2,12 @@
   width: fit-content;
   padding: 8px 20px;
   margin: 5px auto 0;
-  font-size: 17px;
-  font-weight: 500;
   border: 2px solid #fff;
   border-radius: 15px;
-  color: var(--alt-main-color);
+  font-size: 17px;
+  font-weight: 500;
   background-color: #fff;
+  color: var(--alt-main-color);
   transition: 0.3s;
   cursor: pointer;
   &:hover {

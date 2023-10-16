@@ -1,9 +1,9 @@
 .menu {
   display: none;
-  background-color: #fff;
-  font-size: 38px;
   margin-left: 10px;
   border-radius: 6px;
+  font-size: 38px;
+  background-color: #fff;
   color: var(--alt-main-color);
   @include phones {
     display: block;

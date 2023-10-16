@@ -1,4 +1,21 @@
+import { useEffect, useState } from "react";
+
 function Users() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/user/show")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+  const showUsers = data.map((e) => {
+    return (
+      <tr key={e.id}>
+        <td>{e.id}</td>
+        <td>{e.name}</td>
+        <td>{e.email}</td>
+      </tr>
+    );
+  });
   return (
     <div className="users">
       <table>
@@ -9,18 +26,7 @@ function Users() {
             <th>Email</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mostafa</td>
-            <td>m@gmail.com</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Ahmed</td>
-            <td>a@gmail.com</td>
-          </tr>
-        </tbody>
+        <tbody>{showUsers}</tbody>
       </table>
     </div>
   );

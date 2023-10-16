@@ -1,16 +1,16 @@
 .users {
   padding: 20px;
   table {
-    border-collapse: collapse;
     width: 100%;
+    border-collapse: collapse;
     table-layout: fixed;
-    tr {
+    tr:nth-child(even) {
       background-color: #f1f7f8;
     }
     th,
     td {
-      border: 1px solid var(--main-color);
       padding: 12px;
+      border: 1px solid var(--main-color);
       text-align: center;
     }
     th {
