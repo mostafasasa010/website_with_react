@@ -32,8 +32,14 @@ nav.nav {
             display: none;
           }
           li {
+            &:not(:last-of-type) {
+              margin-right: 10px;
+            }
             a {
-              padding: 10px 12px;
+              padding: 8px 12px;
+              border-radius: 15px;
+              font-size: 17px;
+              font-weight: 500;
               background-color: var(--main-color);
               color: #fff;
             }
@@ -48,6 +54,7 @@ nav.nav {
           }
           a {
             padding: 6px 12px;
+            margin: 0;
             @include phones {
               padding: 4px 6px;
               font-size: 15px;

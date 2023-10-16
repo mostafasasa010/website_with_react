@@ -19,6 +19,23 @@
     }
     td {
       overflow: scroll;
+      i {
+        font-size: 24px;
+        cursor: pointer;
+        @include phones {
+          font-size: 18px;
+        }
+      }
+      .edit {
+        color: var(--second-color);
+        margin-right: 10px;
+        @include phones {
+          margin-right: 5px;
+        }
+      }
+      .del {
+        color: var(--error-color);
+      }
     }
   }
 }

@@ -166,8 +166,14 @@ nav.nav .container > div .right ul.ul {
     display: none;
   }
 }
+nav.nav .container > div .right ul.ul li:not(:last-of-type) {
+  margin-right: 10px;
+}
 nav.nav .container > div .right ul.ul li a {
-  padding: 10px 12px;
+  padding: 8px 12px;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 500;
   background-color: var(--main-color);
   color: #fff;
 }
@@ -183,6 +189,7 @@ nav.nav .container > div .right .btns {
 }
 nav.nav .container > div .right .btns a {
   padding: 6px 12px;
+  margin: 0;
 }
 @media (max-width: 480px) {
   nav.nav .container > div .right .btns a {
@@ -385,6 +392,27 @@ nav.nav .container > div .right i.bx-x {
 }
 .users table td {
   overflow: scroll;
+}
+.users table td i {
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .users table td i {
+    font-size: 18px;
+  }
+}
+.users table td .edit {
+  color: var(--second-color);
+  margin-right: 10px;
+}
+@media (max-width: 480px) {
+  .users table td .edit {
+    margin-right: 5px;
+  }
+}
+.users table td .del {
+  color: var(--error-color);
 }
 
 /*# sourceMappingURL=main.css.map */

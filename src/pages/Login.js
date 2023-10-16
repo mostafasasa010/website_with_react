@@ -45,7 +45,7 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
           {email === "" && accept && <p>Email Is Required</p>}
-          {emailError === 401 && accept && <p>The Email Is Wrong</p>}
+          {emailError === 401 && accept && <p>Not Logged in By This Email</p>}
           <label htmlFor="password">Password: </label>
           <input
             id="password"
