@@ -1,0 +1,17 @@
+.btn {
+  width: fit-content;
+  padding: 8px 20px;
+  margin: 5px auto 0;
+  font-size: 17px;
+  font-weight: 500;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  color: var(--alt-main-color);
+  background-color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--main-color);
+    color: #fff;
+  }
+}

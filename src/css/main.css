@@ -2,6 +2,7 @@
 :root {
   --main-color: #1abc9c;
   --alt-main-color: #16a085;
+  --second-color: #2ecc71;
   --palceholde-color: #95a5a6;
   --error-color: #e74c3c;
   --alt-error-color: #c0392b;
@@ -9,8 +10,8 @@
 }
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -31,8 +32,8 @@ a {
 }
 
 button {
-  font-family: var(--main-font);
   border: none;
+  font-family: var(--main-font);
 }
 
 input,
@@ -47,14 +48,103 @@ textarea::placeholder {
   color: var(--palceholde-color);
 }
 
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.btn {
+  width: fit-content;
+  padding: 8px 20px;
+  margin: 5px auto 0;
+  font-size: 17px;
+  font-weight: 500;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  color: var(--alt-main-color);
+  background-color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+nav.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--alt-main-color);
+  height: 100px;
+  border-bottom: 4px solid var(--second-color);
+}
+nav.nav .container > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav.nav .container > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav.nav .container > div > a img {
+  width: 70px;
+}
+nav.nav .container > div .right {
+  display: flex;
+}
+nav.nav .container > div .right ul {
+  display: flex;
+}
+@media (max-width: 480px) {
+  nav.nav .container > div .right ul {
+    display: none;
+  }
+}
+nav.nav .container > div .right ul li a {
+  color: #fff;
+  padding: 10px 12px;
+  background-color: var(--main-color);
+}
+nav.nav .container > div .right .btns {
+  margin-left: 20px;
+}
+nav.nav .container > div .right .btns a {
+  padding: 6px 12px;
+}
+@media (max-width: 480px) {
+  nav.nav .container > div .right .btns a {
+    font-size: 15px;
+  }
+}
+nav.nav .container > div .right .btns a:not(:last-of-type) {
+  margin-right: 8px;
+}
+nav.nav .container > div .right .btns a:hover {
+  background-color: var(--alt-main-color);
+}
+
 .sign-up {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 120px);
   padding: 0 20px;
+  margin-top: 100px;
 }
 .sign-up form {
   display: flex;
@@ -62,7 +152,7 @@ textarea::placeholder {
   width: 450px;
   padding: 20px;
   border: 3px solid var(--alt-main-color);
-  border-radius: 12px;
+  border-radius: 15px;
   background-color: var(--main-color);
   color: #fff;
   transition: 0.3s;
@@ -96,23 +186,6 @@ textarea::placeholder {
   font-weight: bold;
   font-size: 18px;
 }
-.sign-up form button {
-  width: fit-content;
-  padding: 8px 20px;
-  margin: 5px auto 0;
-  font-size: 18px;
-  font-weight: 500;
-  border: 2px solid #fff;
-  border-radius: 15px;
-  color: var(--alt-main-color);
-  background-color: #fff;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.sign-up form button:hover {
-  background-color: var(--main-color);
-  color: #fff;
-}
 .sign-up form p {
   position: relative;
   width: fit-content;
@@ -136,6 +209,13 @@ textarea::placeholder {
   border-width: 8px;
   border-style: solid;
   border-color: transparent transparent var(--error-color) transparent;
+}
+
+.home {
+  margin-top: 100px;
+}
+.home .container > div h1 {
+  color: var(--main-color);
 }
 
 /*# sourceMappingURL=main.css.map */

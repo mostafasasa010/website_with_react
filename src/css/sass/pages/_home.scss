@@ -1,0 +1,10 @@
+.home {
+  margin-top: 100px;
+  .container {
+    > div {
+      h1 {
+        color: var(--main-color);
+      }
+    }
+  }
+}
