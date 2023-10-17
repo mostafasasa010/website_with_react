@@ -16,12 +16,14 @@ function EditUsers() {
   return (
     <MainForm
       button="Update"
+      title="Edit"
       endPoint={`user/update/${id}`}
       setLocalStorage={false}
       to="dashboard/users"
       name={name}
       email={email}
       emailError={false}
+      class="update"
     />
   );
 }

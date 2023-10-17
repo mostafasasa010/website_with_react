@@ -34,8 +34,9 @@ function Login() {
   return (
     <>
       <Header />
-      <div className="sign-up">
+      <div className="login">
         <form onSubmit={submit}>
+          <h2>Log In</h2>
           <label htmlFor="email">Email: </label>
           <input
             id="email"

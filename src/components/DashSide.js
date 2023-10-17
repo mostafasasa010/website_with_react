@@ -1,16 +1,9 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function DashSide() {
   function handelGear() {
     document.querySelector(".bx.bxs-cog").classList.toggle("bx-spin");
     document.querySelector(".dash-side").classList.toggle("active");
-  }
-  function handelLi(e) {
-    let links = document.querySelectorAll(".dash-side ul li a");
-    links.forEach((link) => {
-      link.classList.remove("active");
-    });
-    e.target.classList.add("active");
   }
   return (
     <div className="dash-side">
@@ -19,9 +12,22 @@ function DashSide() {
       </div>
       <ul>
         <li>
-          <Link to="/dashboard/users" onClick={(e) => handelLi(e)}>
-            <span>Users</span> <i className="bx bx-right-arrow-alt"></i>
-          </Link>
+          <NavLink activeclassname="active" to="/dashboard/users">
+            <div>
+              <i className="bx bxs-user"></i>
+              <span>Users</span>
+            </div>
+            <i className="bx bx-right-arrow-alt"></i>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeclassname="active" to="/dashboard/user/create">
+            <div>
+              <i className="bx bxs-user-plus"></i>
+              <span>New User</span>
+            </div>
+            <i className="bx bx-right-arrow-alt"></i>
+          </NavLink>
         </li>
       </ul>
     </div>

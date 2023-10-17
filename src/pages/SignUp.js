@@ -7,12 +7,14 @@ function SignUp() {
       <Header />
       <MainForm
         button="Register"
+        title="Sign Up"
         endPoint="register"
         setLocalStorage={true}
         to=""
         name=""
         email=""
         emailError={true}
+        class="sign-up"
       />
     </>
   );

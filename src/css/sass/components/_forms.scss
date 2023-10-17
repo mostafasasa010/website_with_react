@@ -1,4 +1,7 @@
-.sign-up {
+.sign-up,
+.login,
+.update,
+.create {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +27,25 @@
       -webkit-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
       -moz-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
       box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
+      & h2::before {
+        width: 97%;
+      }
+    }
+    h2 {
+      position: relative;
+      width: fit-content;
+      margin: 0 auto;
+      font-size: 40px;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 4px;
+        bottom: -5px;
+        left: 2px;
+        background-color: #fff;
+        transition: 0.3s;
+      }
     }
     input {
       padding: 8px 12px;
@@ -62,6 +84,38 @@
         border-width: 8px;
         border-style: solid;
         border-color: transparent transparent var(--error-color) transparent;
+      }
+    }
+  }
+}
+.update {
+  form {
+    border-color: var(--alt-third-color);
+    background-color: var(--third-color);
+    input {
+      color: var(--alt-third-color) !important;
+    }
+    .btn {
+      color: var(--alt-third-color);
+      &:hover {
+        background-color: var(--third-color);
+        color: #fff;
+      }
+    }
+  }
+}
+.create {
+  form {
+    border-color: var(--alt-fourth-color);
+    background-color: var(--fourth-color);
+    input {
+      color: var(--alt-fourth-color) !important;
+    }
+    .btn {
+      color: var(--alt-fourth-color);
+      &:hover {
+        background-color: var(--fourth-color);
+        color: #fff;
       }
     }
   }

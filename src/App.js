@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import EditUsers from "./pages/EditUsers";
+import CreateUser from "./pages/CreateUser";
 function App() {
   return (
     <div>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="users" element={<Users />} />
+          <Route path="user/create" element={<CreateUser />} />
           <Route path="users/:id" element={<EditUsers />} />
         </Route>
       </Routes>

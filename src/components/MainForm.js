@@ -42,8 +42,9 @@ function MainForm(props) {
     }
   }
   return (
-    <div className="sign-up">
+    <div className={props.class}>
       <form onSubmit={submit}>
+        <h2>{props.title}</h2>
         <label htmlFor="name">Name: </label>
         <input
           id="name"

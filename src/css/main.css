@@ -3,6 +3,10 @@
   --main-color: #1abc9c;
   --alt-main-color: #16a085;
   --second-color: #2ecc71;
+  --third-color: #3498db;
+  --alt-third-color: #2980b9;
+  --fourth-color: #34495e;
+  --alt-fourth-color: #2c3e50;
   --palceholde-color: #95a5a6;
   --error-color: #e74c3c;
   --alt-error-color: #c0392b;
@@ -221,7 +225,10 @@ nav.nav .container > div .right i.bx-x {
   color: var(--error-color);
 }
 
-.sign-up {
+.sign-up,
+.login,
+.update,
+.create {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,7 +238,10 @@ nav.nav .container > div .right i.bx-x {
   padding: 0 20px;
   margin-top: 100px;
 }
-.sign-up form {
+.sign-up form,
+.login form,
+.update form,
+.create form {
   display: flex;
   flex-direction: column;
   width: 450px;
@@ -243,16 +253,53 @@ nav.nav .container > div .right i.bx-x {
   transition: 0.3s;
 }
 @media (max-width: 480px) {
-  .sign-up form {
+  .sign-up form,
+  .login form,
+  .update form,
+  .create form {
     width: 100%;
   }
 }
-.sign-up form:hover {
+.sign-up form:hover,
+.login form:hover,
+.update form:hover,
+.create form:hover {
   -webkit-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.4);
 }
-.sign-up form input {
+.sign-up form:hover h2::before,
+.login form:hover h2::before,
+.update form:hover h2::before,
+.create form:hover h2::before {
+  width: 97%;
+}
+.sign-up form h2,
+.login form h2,
+.update form h2,
+.create form h2 {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 40px;
+}
+.sign-up form h2::before,
+.login form h2::before,
+.update form h2::before,
+.create form h2::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -5px;
+  left: 2px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.sign-up form input,
+.login form input,
+.update form input,
+.create form input {
   padding: 8px 12px;
   margin-bottom: 10px;
   border-radius: 15px;
@@ -261,17 +308,26 @@ nav.nav .container > div .right i.bx-x {
   color: var(--alt-main-color) !important;
 }
 @media (max-width: 480px) {
-  .sign-up form input {
+  .sign-up form input,
+  .login form input,
+  .update form input,
+  .create form input {
     font-size: 14px;
   }
 }
-.sign-up form label {
+.sign-up form label,
+.login form label,
+.update form label,
+.create form label {
   position: relative;
   margin-bottom: 3px;
   font-weight: bold;
   font-size: 18px;
 }
-.sign-up form p {
+.sign-up form p,
+.login form p,
+.update form p,
+.create form p {
   position: relative;
   width: fit-content;
   padding: 6px 10px;
@@ -282,11 +338,17 @@ nav.nav .container > div .right i.bx-x {
   background-color: var(--error-color);
 }
 @media (max-width: 480px) {
-  .sign-up form p {
+  .sign-up form p,
+  .login form p,
+  .update form p,
+  .create form p {
     font-size: 14px;
   }
 }
-.sign-up form p::before {
+.sign-up form p::before,
+.login form p::before,
+.update form p::before,
+.create form p::before {
   content: "";
   position: absolute;
   top: -16px;
@@ -294,6 +356,36 @@ nav.nav .container > div .right i.bx-x {
   border-width: 8px;
   border-style: solid;
   border-color: transparent transparent var(--error-color) transparent;
+}
+
+.update form {
+  border-color: var(--alt-third-color);
+  background-color: var(--third-color);
+}
+.update form input {
+  color: var(--alt-third-color) !important;
+}
+.update form .btn {
+  color: var(--alt-third-color);
+}
+.update form .btn:hover {
+  background-color: var(--third-color);
+  color: #fff;
+}
+
+.create form {
+  border-color: var(--alt-fourth-color);
+  background-color: var(--fourth-color);
+}
+.create form input {
+  color: var(--alt-fourth-color) !important;
+}
+.create form .btn {
+  color: var(--alt-fourth-color);
+}
+.create form .btn:hover {
+  background-color: var(--fourth-color);
+  color: #fff;
 }
 
 .dash-side {
@@ -331,10 +423,52 @@ nav.nav .container > div .right i.bx-x {
   color: #fff;
   transition: 0.3s;
 }
+.dash-side ul li a div,
+.dash-side ul li a.active div {
+  display: flex;
+  align-items: center;
+}
+.dash-side ul li a div i,
+.dash-side ul li a.active div i {
+  margin-right: 5px;
+  font-weight: normal;
+}
+@media (max-width: 480px) {
+  .dash-side ul li a div i,
+  .dash-side ul li a.active div i {
+    margin-right: 2px;
+  }
+}
 .dash-side ul li a i,
 .dash-side ul li a.active i {
   font-size: 20px;
   font-weight: bold;
+}
+@media (max-width: 768px) {
+  .dash-side ul li a i,
+  .dash-side ul li a.active i {
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+@media (max-width: 480px) {
+  .dash-side ul li a i,
+  .dash-side ul li a.active i {
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+@media (max-width: 768px) {
+  .dash-side ul li a,
+  .dash-side ul li a.active {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .dash-side ul li a,
+  .dash-side ul li a.active {
+    font-size: 15px;
+  }
 }
 .dash-side ul li a {
   background-color: var(--main-color);
@@ -409,7 +543,8 @@ nav.nav .container > div .right i.bx-x {
   color: #fff;
 }
 .users table td {
-  overflow: scroll;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .users table td i {
   font-size: 24px;

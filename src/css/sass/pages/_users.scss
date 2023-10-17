@@ -18,7 +18,8 @@
       color: #fff;
     }
     td {
-      overflow: scroll;
+      overflow: hidden;
+      text-overflow: ellipsis;
       i {
         font-size: 24px;
         cursor: pointer;
