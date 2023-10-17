@@ -73,6 +73,26 @@ textarea::placeholder {
   }
 }
 
+ul.ul {
+  display: flex;
+}
+@media (max-width: 480px) {
+  ul.ul {
+    display: none;
+  }
+}
+ul.ul li:not(:last-of-type) {
+  margin-right: 10px;
+}
+ul.ul li a {
+  padding: 8px 12px;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 500;
+  background-color: var(--main-color);
+  color: #fff;
+}
+
 .ul-i {
   position: fixed;
   top: -200px;
@@ -157,25 +177,6 @@ nav.nav .container > div > a img {
 nav.nav .container > div .right {
   display: flex;
   align-items: center;
-}
-nav.nav .container > div .right ul.ul {
-  display: flex;
-}
-@media (max-width: 480px) {
-  nav.nav .container > div .right ul.ul {
-    display: none;
-  }
-}
-nav.nav .container > div .right ul.ul li:not(:last-of-type) {
-  margin-right: 10px;
-}
-nav.nav .container > div .right ul.ul li a {
-  padding: 8px 12px;
-  border-radius: 15px;
-  font-size: 17px;
-  font-weight: 500;
-  background-color: var(--main-color);
-  color: #fff;
 }
 nav.nav .container > div .right .btns {
   display: flex;
@@ -301,7 +302,7 @@ nav.nav .container > div .right i.bx-x {
   left: 0;
   width: 20%;
   height: calc(100vh - 100px);
-  padding: 20px;
+  padding: 10px;
   border-right: 4px solid var(--second-color);
   background-color: var(--main-color);
   transition: 0.3s;
@@ -313,10 +314,30 @@ nav.nav .container > div .right i.bx-x {
     transform: translateX(-150px);
   }
 }
-.dash-side ul li a {
-  display: block;
+.dash-side ul li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.dash-side ul li a,
+.dash-side ul li a.active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  padding: 12px 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--alt-main-color);
   color: #fff;
+  transition: 0.3s;
+}
+.dash-side ul li a i,
+.dash-side ul li a.active i {
+  font-size: 20px;
+  font-weight: bold;
+}
+.dash-side ul li a {
+  background-color: var(--main-color);
 }
 .dash-side > div {
   position: absolute;
@@ -347,9 +368,6 @@ nav.nav .container > div .right i.bx-x {
   .nav-dash .right ul {
     display: none;
   }
-}
-.nav-dash .right ul li a {
-  color: #fff;
 }
 
 .home {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function EditUsers() {
   const [name, setName] = useState("");
@@ -7,7 +7,15 @@ function EditUsers() {
   const [password, setPassword] = useState("");
   const [passwordR, setPasswordR] = useState("");
   const [accept, setAccept] = useState(false);
-  const [emailError, setEmailError] = useState(0);
+  const id = window.location.pathname.split("/").slice(-1)[0];
+  useEffect(() => {
+    fetch(`http://127.0.0.1:8000/api/user/showbyid/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setName(data[0].name);
+        setEmail(data[0].email);
+      });
+  }, []);
   async function submit(e) {
     let flag = true;
     e.preventDefault();
@@ -19,20 +27,21 @@ function EditUsers() {
     }
     try {
       if (flag) {
-        const res = await axios.post("http://127.0.0.1:8000/api/register", {
-          name: name,
-          email: email,
-          password: password,
-          password_confirmation: passwordR,
-        });
+        const res = await axios.post(
+          `http://127.0.0.1:8000/api/user/update/${id}`,
+          {
+            name: name,
+            email: email,
+            password: password,
+            password_confirmation: passwordR,
+          }
+        );
         if (res.status === 200) {
           window.localStorage.setItem("email", email);
-          window.location.pathname = "/";
+          window.location.pathname = "/dashboard/users";
         }
       }
-    } catch (err) {
-      setEmailError(err.response.status);
-    }
+    } catch (err) {}
   }
   return (
     <div className="sign-up">
@@ -55,7 +64,6 @@ function EditUsers() {
           onChange={(e) => setEmail(e.target.value)}
         />
         {email === "" && accept && <p>Email Is Required</p>}
-        {emailError === 422 && accept && <p>Email Is Already Been Taken</p>}
         <label htmlFor="password">Password: </label>
         <input
           id="password"
@@ -77,7 +85,7 @@ function EditUsers() {
         />
         {passwordR !== password && accept && <p>Password Must Be Matching</p>}
         <button type="submit" className="btn">
-          Register
+          Update
         </button>
       </form>
     </div>

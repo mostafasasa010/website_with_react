@@ -4,7 +4,7 @@
   left: 0;
   width: 20%;
   height: calc(100vh - 100px);
-  padding: 20px;
+  padding: 10px;
   border-right: 4px solid var(--second-color);
   background-color: var(--main-color);
   transition: 0.3s;
@@ -15,10 +15,31 @@
   }
   ul {
     li {
-      a {
-        display: block;
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+      a,
+      a.active {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
+        padding: 12px 10px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        background-color: var(--alt-main-color);
         color: #fff;
+        transition: 0.3s;
+        i {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+    li {
+      a {
+        background-color: var(--main-color);
       }
     }
   }

@@ -26,25 +26,6 @@ nav.nav {
       .right {
         display: flex;
         align-items: center;
-        ul.ul {
-          display: flex;
-          @include phones {
-            display: none;
-          }
-          li {
-            &:not(:last-of-type) {
-              margin-right: 10px;
-            }
-            a {
-              padding: 8px 12px;
-              border-radius: 15px;
-              font-size: 17px;
-              font-weight: 500;
-              background-color: var(--main-color);
-              color: #fff;
-            }
-          }
-        }
         .btns {
           display: flex;
           align-items: center;

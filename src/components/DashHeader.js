@@ -14,7 +14,7 @@ function DashHeader() {
               <img src={require("../imgs/logo.png")} alt="Logo" />
             </Link>
             <div className="right">
-              <ul>
+              <ul className="ul">
                 <li>
                   <Link to="/">Home</Link>
                 </li>
