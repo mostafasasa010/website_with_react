@@ -234,8 +234,7 @@ nav.nav .container > div .right i.bx-x {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 120px);
-  padding: 0 20px;
+  padding: 40px 20px;
   margin-top: 100px;
 }
 .sign-up form,
@@ -280,7 +279,7 @@ nav.nav .container > div .right i.bx-x {
 .create form h2 {
   position: relative;
   width: fit-content;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   font-size: 40px;
 }
 .sign-up form h2::before,
@@ -356,6 +355,20 @@ nav.nav .container > div .right i.bx-x {
   border-width: 8px;
   border-style: solid;
   border-color: transparent transparent var(--error-color) transparent;
+}
+.sign-up form p.err,
+.login form p.err,
+.update form p.err,
+.create form p.err {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+.sign-up form p.err::before,
+.login form p.err::before,
+.update form p.err::before,
+.create form p.err::before {
+  display: none;
 }
 
 .update form {

@@ -18,31 +18,23 @@ function Header() {
               <img src={require("../imgs/logo.png")} alt="Logo" />
             </Link>
             <div className="right">
-              {window.localStorage.getItem("email") && (
-                <ul className="ul">
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/dashboard">Dashboard</Link>
-                  </li>
-                </ul>
-              )}
+              <ul className="ul">
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+              </ul>
               <div className="btns">
-                {!window.localStorage.getItem("email") ? (
-                  <>
-                    <Link to="/login" className="btn">
-                      Log In
-                    </Link>
-                    <Link to="/register" className="btn">
-                      Register
-                    </Link>
-                  </>
-                ) : (
-                  <Link to="/" className="btn" onClick={handelLogOut}>
-                    Log Out
+                <>
+                  <Link to="/login" className="btn">
+                    Log In
                   </Link>
-                )}
+                  <Link to="/register" className="btn">
+                    Register
+                  </Link>
+                </>
               </div>
               <i className="bx bx-menu menu" onClick={handelClick}></i>
             </div>

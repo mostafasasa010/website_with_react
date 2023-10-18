@@ -1,40 +1,39 @@
 import axios from "axios";
-import { useState } from "react";
-import Header from "../components/Header";
+import { useContext, useState } from "react";
+import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
+import { User } from "../../context/Context";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [accept, setAccept] = useState(false);
-  const [emailError, setEmailError] = useState(0);
+  const [Error, setError] = useState(false);
+  const userN = useContext(User);
+  const navigate = useNavigate();
   async function submit(e) {
-    let flag = true;
     e.preventDefault();
     setAccept(true);
-    if (password.length < 8) {
-      flag = false;
-    } else {
-      flag = true;
-    }
     try {
-      if (flag) {
-        const res = await axios.post("http://127.0.0.1:8000/api/login", {
-          email: email,
-          password: password,
-        });
-        if (res.status === 200) {
-          window.localStorage.setItem("email", email);
-          window.location.pathname = "/";
-        }
-      }
+      const res = await axios.post(`http://127.0.0.1:8000/api/login`, {
+        email: email,
+        password: password,
+      });
+      const token = res.data.data.token;
+      const userData = res.data.data.user;
+      userN.setAuth({ token, userData });
+      navigate("/dashboard");
     } catch (err) {
-      setEmailError(err.response.status);
+      if (err.response.status === 401) {
+        setError(err.response.status);
+      }
+      setAccept(true);
     }
   }
   return (
     <>
       <Header />
-      <div className="login">
+      <div className="sign-up">
         <form onSubmit={submit}>
           <h2>Log In</h2>
           <label htmlFor="email">Email: </label>
@@ -46,7 +45,6 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
           {email === "" && accept && <p>Email Is Required</p>}
-          {emailError === 401 && accept && <p>Not Logged in By This Email</p>}
           <label htmlFor="password">Password: </label>
           <input
             id="password"
@@ -61,6 +59,7 @@ function Login() {
           <button type="submit" className="btn">
             Log In
           </button>
+          {Error && accept && <p className="err">Wrong Password Or Email</p>}
         </form>
       </div>
     </>
