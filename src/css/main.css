@@ -63,6 +63,57 @@ textarea::placeholder {
   }
 }
 
+.main-loader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--alt-main-color);
+}
+.main-loader .loader {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: #fff;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.main-loader .loader::after, .main-loader .loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: scale50 1s infinite ease-in-out;
+}
+.main-loader .loader::before {
+  top: auto;
+  bottom: 0;
+  background-color: var(--error-color);
+  animation-delay: 0.5s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale50 {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
 .menu {
   display: none;
   margin-left: 10px;
@@ -423,6 +474,7 @@ nav.nav .container > div .right i.bx-x {
   margin-bottom: 10px;
 }
 .dash-side ul li a,
+.dash-side ul li a:hover,
 .dash-side ul li a.active {
   display: flex;
   align-items: center;
@@ -437,28 +489,33 @@ nav.nav .container > div .right i.bx-x {
   transition: 0.3s;
 }
 .dash-side ul li a div,
+.dash-side ul li a:hover div,
 .dash-side ul li a.active div {
   display: flex;
   align-items: center;
 }
 .dash-side ul li a div i,
+.dash-side ul li a:hover div i,
 .dash-side ul li a.active div i {
   margin-right: 5px;
   font-weight: normal;
 }
 @media (max-width: 480px) {
   .dash-side ul li a div i,
+  .dash-side ul li a:hover div i,
   .dash-side ul li a.active div i {
     margin-right: 2px;
   }
 }
 .dash-side ul li a i,
+.dash-side ul li a:hover i,
 .dash-side ul li a.active i {
   font-size: 20px;
   font-weight: bold;
 }
 @media (max-width: 768px) {
   .dash-side ul li a i,
+  .dash-side ul li a:hover i,
   .dash-side ul li a.active i {
     font-size: 16px;
     font-weight: normal;
@@ -466,6 +523,7 @@ nav.nav .container > div .right i.bx-x {
 }
 @media (max-width: 480px) {
   .dash-side ul li a i,
+  .dash-side ul li a:hover i,
   .dash-side ul li a.active i {
     font-size: 16px;
     font-weight: normal;
@@ -473,12 +531,14 @@ nav.nav .container > div .right i.bx-x {
 }
 @media (max-width: 768px) {
   .dash-side ul li a,
+  .dash-side ul li a:hover,
   .dash-side ul li a.active {
     font-size: 15px;
   }
 }
 @media (max-width: 480px) {
   .dash-side ul li a,
+  .dash-side ul li a:hover,
   .dash-side ul li a.active {
     font-size: 15px;
   }

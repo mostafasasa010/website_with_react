@@ -8,6 +8,7 @@ import CreateUser from "./pages/CreateUser";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
 import RequierAuth from "./pages/auth/RequierAuth";
+import PersistLogin from "./pages/auth/PersistLogin";
 function App() {
   return (
     <div>
@@ -15,11 +16,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route element={<RequierAuth />}>
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="users" element={<Users />} />
-            <Route path="user/create" element={<CreateUser />} />
-            <Route path="users/:id" element={<EditUsers />} />
+        <Route element={<PersistLogin />}>
+          <Route element={<RequierAuth />}>
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="users" element={<Users />} />
+              <Route path="user/create" element={<CreateUser />} />
+              <Route path="users/:id" element={<EditUsers />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
 function Header() {
-  function handelLogOut() {
-    window.localStorage.removeItem("email");
-    window.location.reload();
-  }
   function handelClick() {
     document.querySelector(".bx.bx-menu").classList.toggle("bx-x");
     document.querySelector(".ul-i").classList.toggle("active");

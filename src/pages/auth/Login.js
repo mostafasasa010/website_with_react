@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../context/Context";
+import Cookies from "universal-cookie";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ function Login() {
   const [Error, setError] = useState(false);
   const userN = useContext(User);
   const navigate = useNavigate();
+  const cookie = new Cookies();
   async function submit(e) {
     e.preventDefault();
     setAccept(true);
@@ -20,6 +22,7 @@ function Login() {
         password: password,
       });
       const token = res.data.data.token;
+      cookie.set("Bearer", token);
       const userData = res.data.data.user;
       userN.setAuth({ token, userData });
       navigate("/dashboard");
